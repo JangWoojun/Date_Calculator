@@ -11,13 +11,19 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private var dateView : TextView? = null
-    private var timeText : TextView? = null
+    private var timeTextD : TextView? = null
+    private var timeTextS : TextView? = null
+    private var timeTextM : TextView? = null
+    private var timeTextH : TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         dateView = findViewById(R.id.date)
-        timeText = findViewById(R.id.timeText)
+        timeTextD = findViewById(R.id.timeTextD)
+        timeTextH = findViewById(R.id.timeTextH)
+        timeTextM = findViewById(R.id.timeTextM)
+        timeTextS = findViewById(R.id.timeTextS)
 
         val dateBtn = findViewById<Button>(R.id.dateBtn)
         dateBtn.setOnClickListener { view ->
@@ -42,13 +48,27 @@ class MainActivity : AppCompatActivity() {
                 val theDate = sdf.parse("$year/${month + 1}/$dayOfMonth")
 
                 theDate.let { // let 으로 오류 방지
-                    val sMTime = theDate.time / 60000 // 선택한 날짜 구하기
+                    val dTime = theDate.time / 86400000
+
+                    val mTime = theDate.time / 60000
+
                     val currentDate = sdf.parse(sdf.format(System.currentTimeMillis())) // 현재 날짜 구하기
 
                     currentDate.let {
+                        val cDTime = currentDate.time/86400000
+                        val cHTime = currentDate.time/3600000
                         val cMTime = currentDate.time/60000
-                        val endTime = cMTime - sMTime
-                        timeText?.text = endTime.toString()
+                        val cSTime = currentDate.time/1000
+
+                        val endDTime = cDTime - dTime
+
+                        val endMTime = cMTime - mTime
+
+
+                        timeTextD?.text = endDTime.toString()+" Day"
+
+                        timeTextM?.text = endMTime.toString()+" Minute"
+
                     }
                 }
 

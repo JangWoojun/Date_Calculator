@@ -58,18 +58,18 @@ class MainActivity : AppCompatActivity() {
                         val cDTime = currentDate.time/86400000
                         val cHTime = currentDate.time/3600000
                         val cMTime = currentDate.time/60000
-
+                        val cSTime = currentDate.time/1000
 
                         val endDTime = cDTime - dTime
                         val endHTime = cHTime - dTime
                         val endMTime = cMTime - mTime
-
+                        val endSTime = cSTime - dTime
 
 
                         timeTextD?.text = endDTime.toString()+" Day"
                         timeTextH?.text = endHTime.toString()+" Hour"
                         timeTextM?.text = endMTime.toString()+" Minute"
-
+                        timeTextH?.text = endSTime.toString()+" Second"
 
                     }
                 }

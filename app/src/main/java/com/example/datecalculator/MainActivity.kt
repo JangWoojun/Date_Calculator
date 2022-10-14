@@ -49,8 +49,9 @@ class MainActivity : AppCompatActivity() {
 
                 theDate.let { // let 으로 오류 방지
                     val dTime = theDate.time / 86400000
-
+                    val hTime = theDate.time / 3600000
                     val mTime = theDate.time / 60000
+                    val sTime = theDate.time / 1000
 
                     val currentDate = sdf.parse(sdf.format(System.currentTimeMillis())) // 현재 날짜 구하기
 
@@ -61,15 +62,15 @@ class MainActivity : AppCompatActivity() {
                         val cSTime = currentDate.time/1000
 
                         val endDTime = cDTime - dTime
-                        val endHTime = cHTime - dTime
+                        val endHTime = cHTime - hTime
                         val endMTime = cMTime - mTime
-                        val endSTime = cSTime - dTime
+                        val endSTime = cSTime - sTime
 
 
                         timeTextD?.text = endDTime.toString()+" Day"
                         timeTextH?.text = endHTime.toString()+" Hour"
                         timeTextM?.text = endMTime.toString()+" Minute"
-                        timeTextH?.text = endSTime.toString()+" Second"
+                        timeTextS?.text = endSTime.toString()+" Second"
 
                     }
                 }

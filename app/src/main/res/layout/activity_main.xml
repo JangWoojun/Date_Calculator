@@ -34,7 +34,7 @@
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IN MINUTES"
+        android:text="BIRTHDAY"
         android:textColor="@color/five"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/date"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="YYYY.MM.DD"
@@ -57,7 +57,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selected Date"
@@ -66,22 +66,44 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/timeText"
-        android:layout_marginTop="16dp"
+        android:id="@+id/timeTextD"
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"
+        android:text="Day"
         android:textColor="@color/five"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:layout_marginTop="16dp"
+        android:id="@+id/timeTextH"
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selected Date"
-        android:textColor="#987D7C"
+        android:text="Hour"
+        android:textColor="@color/five"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/timeTextM"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minute"
+        android:textColor="@color/five"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/timeTextS"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second"
+        android:textColor="@color/five"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 
 </LinearLayout>
